@@ -7,7 +7,7 @@
       "depQ": "Welches Departement leitet {n}?", "sinceLabel": "Im Bundesrat seit",
       "asOf": "2026 – Bundespräsident Guy Parmelin, Vize Ignazio Cassis",
       "note": "Quelle: admin.ch.",
-      "lead": "Die sieben Mitglieder des Bundesrats 2026 – zuerst durchschauen, dann oben testen.",
+      "lead": "Die sieben Mitglieder des Bundesrats 2026 – zuerst durchschauen, dann im Quiz testen.",
       "people": [
         { "slug": "br-parmelin", "n": "Guy Parmelin", "p": "SVP", "d": "WBF – Wirtschaft, Bildung und Forschung", "k": "Waadt", "s": 2016, "x": "Bundespräsident 2026", "credit": "© Schweizerische Bundeskanzlei" },
         { "slug": "br-cassis", "n": "Ignazio Cassis", "p": "FDP", "d": "EDA – Auswärtige Angelegenheiten", "k": "Tessin", "s": 2017, "x": "Vizepräsident 2026", "credit": "© Schweizerische Bundeskanzlei" },

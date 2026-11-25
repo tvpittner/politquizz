@@ -27,6 +27,10 @@ h1,h2,h3{font-family:Archivo,system-ui,sans-serif;margin:0;text-wrap:balance}
 .cross{width:40px;height:40px;flex:none}
 h1{font-size:clamp(28px,4.4vw,44px);line-height:1.05;font-weight:800}
 .sub{opacity:.92;margin:8px 0 18px;max-width:60ch}
+.views{display:inline-flex;gap:4px;padding:4px;margin-bottom:16px;border-radius:999px;background:rgba(0,0,0,.2)}
+.views a{font:700 16px Archivo,sans-serif;color:#fff;text-decoration:none;border-radius:999px;padding:0 20px;min-height:44px;display:inline-flex;align-items:center}
+.views a[aria-current=page]{background:#fff;color:#17171a}
+.views a:focus-visible{outline:3px solid #ffbf47;outline-offset:2px}
 .tabs{display:flex;gap:6px;flex-wrap:wrap}
 .tabs button{font:600 16px Archivo,sans-serif;border:0;border-radius:12px 12px 0 0;padding:12px 18px;min-height:44px;cursor:pointer;background:rgba(0,0,0,.2);color:#fff}
 .tabs button[aria-selected=true]{background:var(--bg);color:var(--ink)}
@@ -89,7 +93,7 @@ button:focus-visible,.switch input:focus-visible{outline:3px solid #ffbf47;outli
 .bar i{display:block;height:100%;background:var(--red);width:0;transition:width .3s}
 .end{text-align:center;padding:30px 10px}
 .end .big{font:800 clamp(56px,9vw,88px)/1 Archivo,sans-serif;color:var(--red)}
-.learn{background:var(--soft)}
+.learn{background:var(--soft);min-height:60vh}
 .learn h2{font-size:clamp(24px,3vw,32px);margin-bottom:6px}
 .learn p{color:var(--mut);margin:0 0 20px}
 .lhead{display:flex;justify-content:space-between;align-items:flex-start;gap:8px 20px;flex-wrap:wrap}
@@ -136,11 +140,15 @@ footer{border-top:1px solid var(--line)}
     <h1>Wer regiert hier?</h1>
   </div>
   <p class="sub">Lernquiz zu Gesicht, Name, Partei und Ressort – Bundesrat, Zuger Regierungsrat und Ständerat.</p>
+  <nav class="views" id="views" aria-label="Ansicht">
+    <a data-v="quiz" href="#quiz">Quiz</a>
+    <a data-v="lernen" href="#lernen">Lernkarten</a>
+  </nav>
   <div class="tabs" role="tablist" id="tabs"></div>
 </div></header>
 
 <main>
-<section class="band"><div class="wrap">
+<section class="band" id="vquiz"><div class="wrap">
   <div class="modes" id="modes" aria-label="Fragetyp">
     <button class="chip" data-m="mix" aria-pressed="true">Gemischt</button>
     <button class="chip" data-m="faces" aria-pressed="false" hidden>Gesichter</button>
@@ -153,7 +161,7 @@ footer{border-top:1px solid var(--line)}
   <div id="stage"></div>
 </div></section>
 
-<section class="band learn"><div class="wrap">
+<section class="band learn" id="vlearn" hidden><div class="wrap">
   <div class="lhead">
     <h2 id="lt">Lernkarten</h2>
     <label class="switch" id="hidew" hidden><input type="checkbox" id="hide"> Namen verdecken</label>
@@ -178,7 +186,8 @@ const MODES={mix:['who','party','dep','face-name','name-face','face-party'],face
   who:['who','face-name'],party:['party','face-party'],dep:['dep']};
 const IMG_T=new Set(['face-name','name-face','face-party']);
 const GREY='#8b8b93';
-let cur='br',mode='mix',qs=[],i=0,score=0,streak=0,answered=false,wrong=[],hideNames=false;
+let cur='br',view='quiz',mode='mix',qs=[],i=0,score=0,streak=0,answered=false,wrong=[],hideNames=false,auto=0;
+const AUTO_MS=1200; // nach einer richtigen Antwort automatisch weiter
 const $=id=>document.getElementById(id);
 const esc=s=>String(s).replace(/[&<>"']/g,c=>({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;'}[c]));
 const shuf=a=>{a=[...a];for(let j=a.length-1;j>0;j--){const r=Math.floor(Math.random()*(j+1));[a[j],a[r]]=[a[r],a[j]]}return a};
@@ -212,7 +221,7 @@ function build(pool){
     return {p,t,ans,opts};
   });
 }
-function start(pool){qs=build(pool);i=0;score=0;streak=0;wrong=[];render();}
+function start(pool){clearTimeout(auto);qs=build(pool);i=0;score=0;streak=0;wrong=[];render();}
 function clues(p,hideParty){
   const S=SETS[cur],c=[];
   if(!hideParty)c.push(['Partei',p.p]);
@@ -259,7 +268,7 @@ function render(){
       ${tail}</div></div>`;
   }
   document.querySelectorAll('.opt,.fopt').forEach(b=>b.addEventListener('click',()=>pick(+b.dataset.k)));
-  $('next').addEventListener('click',()=>{i++;render();});
+  $('next').addEventListener('click',()=>{clearTimeout(auto);i++;render();});
 }
 function pick(k){
   if(answered)return;answered=true;
@@ -288,11 +297,12 @@ function pick(k){
   }
   $('sc').textContent=score;$('st').textContent=streak;
   const n=$('next');n.hidden=false;n.textContent=i+1>=qs.length?'Auswertung →':'Weiter →';n.focus();
+  if(ok){const at=i;clearTimeout(auto);auto=setTimeout(()=>{if(i===at&&answered){i++;render();}},AUTO_MS);}
 }
 function finish(){
   $('pb').style.width='100%';
   const pct=Math.round(score/qs.length*100),u=[...new Set(wrong)];
-  const msg=pct===100?'Perfekt – du kennst die Regierung.':pct>=75?'Stark. Noch ein, zwei Lücken.':pct>=50?'Solide Basis – nochmals üben.':'Erst die Lernkarten unten anschauen, dann neu starten.';
+  const msg=pct===100?'Perfekt – du kennst die Regierung.':pct>=75?'Stark. Noch ein, zwei Lücken.':pct>=50?'Solide Basis – nochmals üben.':'Erst die Lernkarten anschauen, dann neu starten.';
   $('stage').innerHTML=`<div class="card end"><div class="big">${score}/${qs.length}</div><h2 style="margin:10px 0 6px">${msg}</h2>
     ${u.length?`<p class="note" style="margin:0 auto 18px">Zum Üben: ${u.map(p=>esc(p.n)).join(', ')}</p>`:''}
     <div class="row" style="justify-content:center"><button class="btn" id="again">Neue Runde</button>${u.length?'<button class="btn alt" id="retry">Nur Fehler üben</button>':''}</div></div>`;
@@ -329,6 +339,23 @@ function learn(){
   $('credits').innerHTML=m.size?'<b>Bildnachweise:</b> '+[...m].map(([c,ns])=>`${esc(c)} (${ns.map(esc).join(', ')})`).join(' · '):'';
   $('nophoto').hidden=any;
 }
+// Ansichten «Quiz» und «Lernkarten» als eigene Seiten, Adresse z. B. #lernen/sr
+function links(){
+  document.querySelectorAll('#views a').forEach(a=>{a.href='#'+a.dataset.v+'/'+cur;if(a.dataset.v===view)a.setAttribute('aria-current','page');else a.removeAttribute('aria-current');});
+  const h='#'+view+'/'+cur;
+  if(location.hash!==h)history.replaceState(null,'',h);
+}
+function setView(v){
+  v=v==='lernen'?'lernen':'quiz';
+  if(v!==view)window.scrollTo(0,0);
+  view=v;
+  $('vquiz').hidden=view!=='quiz';$('vlearn').hidden=view!=='lernen';
+}
+function route(){
+  const [v,s]=location.hash.slice(1).split('/');
+  setView(v);
+  if(SETS[s]&&s!==cur)setSet(s);else links();
+}
 function setMode(m){
   mode=m;
   document.querySelectorAll('#modes .chip').forEach(c=>c.setAttribute('aria-pressed',c.dataset.m===m));
@@ -349,6 +376,7 @@ async function setSet(s){
   cur=s;
   document.querySelectorAll('#tabs button').forEach(b=>b.setAttribute('aria-selected',b.dataset.s===s));
   try{localStorage.setItem('rq-set',s)}catch(e){}
+  links();
   await ensure(SETS[s]);
   if(cur!==s)return;
   document.querySelector('#modes [data-m=dep]').textContent=SETS[s].depChip||'Ressort';
@@ -378,7 +406,10 @@ async function boot(){
   $('hide').checked=hideNames;
   $('hide').addEventListener('change',e=>{hideNames=e.target.checked;try{localStorage.setItem('rq-hide',hideNames?'1':'0')}catch(e){}learn();});
   let saved='br';try{saved=localStorage.getItem('rq-set')||'br'}catch(e){}
-  setSet(SETS[saved]?saved:Object.keys(SETS)[0]);
+  const [hv,hs]=location.hash.slice(1).split('/');
+  setView(hv);
+  window.addEventListener('hashchange',route);
+  setSet(SETS[hs]?hs:SETS[saved]?saved:Object.keys(SETS)[0]);
 }
 boot();
 }
