@@ -1,0 +1,7 @@
+{
+  "_hinweis": "Manueller Zuschnitt, wo die Automatik das Gesicht verfehlt: slug → [links, oben, breite, höhe] als Anteil des Originals (0–1). Am besten im Verhältnis 4:5.",
+  "sr-schwander": [0.215, 0.0, 0.33, 0.62],
+  "sr-mueller": [0.24, 0.125, 0.6, 0.5],
+  "sr-jositsch": [0.23, 0.0, 0.48, 0.4],
+  "sr-broulis": [0.21, 0.03, 0.575, 0.42]
+}

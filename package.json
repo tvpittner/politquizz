@@ -1,0 +1,13 @@
+{
+  "name": "politquizz",
+  "private": true,
+  "type": "module",
+  "description": "Lernquiz: Bundesrat und Zuger Regierungsrat an Gesicht, Name, Partei und Ressort erkennen",
+  "scripts": {
+    "images": "node scripts/prep-images.mjs",
+    "serve": "npx serve ."
+  },
+  "devDependencies": {
+    "sharp": "^0.34.0"
+  }
+}

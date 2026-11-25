@@ -1,0 +1,93 @@
+{
+  "parties": { "SVP": "#3a8a3a", "FDP": "#1f5fae", "SP": "#d52b1e", "Mitte": "#e98a00",
+               "Grüne": "#7aa80c", "GLP": "#9aa500", "MCG": "#b58f00", "parteilos": "#77777f" },
+  "sets": {
+    "br": {
+      "title": "Bundesrat", "depLabel": "Departement", "depChip": "Ressort",
+      "depQ": "Welches Departement leitet {n}?", "sinceLabel": "Im Bundesrat seit",
+      "asOf": "2026 – Bundespräsident Guy Parmelin, Vize Ignazio Cassis",
+      "note": "Quelle: admin.ch.",
+      "lead": "Die sieben Mitglieder des Bundesrats 2026 – zuerst durchschauen, dann oben testen.",
+      "people": [
+        { "slug": "br-parmelin", "n": "Guy Parmelin", "p": "SVP", "d": "WBF – Wirtschaft, Bildung und Forschung", "k": "Waadt", "s": 2016, "x": "Bundespräsident 2026", "credit": "© Schweizerische Bundeskanzlei" },
+        { "slug": "br-cassis", "n": "Ignazio Cassis", "p": "FDP", "d": "EDA – Auswärtige Angelegenheiten", "k": "Tessin", "s": 2017, "x": "Vizepräsident 2026", "credit": "© Schweizerische Bundeskanzlei" },
+        { "slug": "br-keller-sutter", "n": "Karin Keller-Sutter", "p": "FDP", "d": "EFD – Finanzen", "k": "St. Gallen", "s": 2019, "credit": "© Schweizerische Bundeskanzlei" },
+        { "slug": "br-roesti", "n": "Albert Rösti", "p": "SVP", "d": "UVEK – Umwelt, Verkehr, Energie, Kommunikation", "k": "Bern", "s": 2023, "credit": "© Schweizerische Bundeskanzlei" },
+        { "slug": "br-baume-schneider", "n": "Elisabeth Baume-Schneider", "p": "SP", "d": "EDI – Inneres", "k": "Jura", "s": 2023, "credit": "© Schweizerische Bundeskanzlei" },
+        { "slug": "br-jans", "n": "Beat Jans", "p": "SP", "d": "EJPD – Justiz und Polizei", "k": "Basel-Stadt", "s": 2024, "credit": "© Schweizerische Bundeskanzlei" },
+        { "slug": "br-pfister", "n": "Martin Pfister", "p": "Mitte", "d": "VBS – Verteidigung, Bevölkerungsschutz, Sport", "k": "Zug", "s": 2025, "credit": "© Schweizerische Bundeskanzlei" }
+      ]
+    },
+    "zg": {
+      "title": "Zuger Regierungsrat", "depLabel": "Direktion", "depChip": "Ressort",
+      "depQ": "Welche Direktion leitet {n}?",
+      "asOf": "Amtsperiode 2023–2026; alle am 4.10.2026 für 2027–2030 wiedergewählt",
+      "note": "Die Direktionen können für die neue Amtsperiode neu verteilt werden.",
+      "lead": "Die sieben Mitglieder der Zuger Regierung – drei Mitte, zwei FDP, zwei SVP.",
+      "people": [
+        { "slug": "zg-dittli", "n": "Laura Dittli", "p": "Mitte", "d": "Sicherheitsdirektion", "credit": "Foto: Kanton Zug" },
+        { "slug": "zg-hausheer", "n": "Andreas Hausheer", "p": "Mitte", "d": "Gesundheitsdirektion", "credit": "Foto: Kanton Zug" },
+        { "slug": "zg-thalmann-gut", "n": "Silvia Thalmann-Gut", "p": "Mitte", "d": "Volkswirtschaftsdirektion", "credit": "Foto: Kanton Zug" },
+        { "slug": "zg-hostettler", "n": "Andreas Hostettler", "p": "FDP", "d": "Direktion des Innern", "credit": "Foto: Kanton Zug" },
+        { "slug": "zg-weber", "n": "Florian Weber", "p": "FDP", "d": "Baudirektion", "credit": "Foto: Kanton Zug" },
+        { "slug": "zg-schleiss", "n": "Stephan Schleiss", "p": "SVP", "d": "Direktion für Bildung und Kultur", "credit": "Foto: Kanton Zug" },
+        { "slug": "zg-taennler", "n": "Heinz Tännler", "p": "SVP", "d": "Finanzdirektion", "credit": "Foto: Kanton Zug" }
+      ]
+    },
+    "sr": {
+      "title": "Ständerat", "depLabel": "Kanton", "depChip": "Kanton",
+      "depQ": "Welchen Kanton vertritt {n}?",
+      "asOf": "Mitglieder gemäss parlament.ch, abgerufen am 25.11.2026",
+      "note": "Quelle: Open Data der Parlamentsdienste (ws.parlament.ch).",
+      "lead": "Die 46 Mitglieder des Ständerats – zwei pro Kanton, je eines für Obwalden, Nidwalden, Basel-Stadt, Basel-Landschaft und die beiden Appenzell.",
+      "people": [
+        { "slug": "sr-binder-keller", "n": "Marianne Binder-Keller", "p": "Mitte", "d": "Aargau", "credit": "© ParlCH / Alessandro della Valle" },
+        { "slug": "sr-burkart", "n": "Thierry Burkart", "p": "FDP", "d": "Aargau", "credit": "© ParlCH / Alessandro della Valle" },
+        { "slug": "sr-caroni", "n": "Andrea Caroni", "p": "FDP", "d": "Appenzell A.-Rh.", "credit": "© ParlCH / Alessandro della Valle" },
+        { "slug": "sr-faessler", "n": "Daniel Fässler", "p": "Mitte", "d": "Appenzell I.-Rh.", "credit": "© ParlCH / Alessandro della Valle" },
+        { "slug": "sr-graf", "n": "Maya Graf", "p": "Grüne", "d": "Basel-Landschaft", "credit": "© ParlCH" },
+        { "slug": "sr-herzog", "n": "Eva Herzog", "p": "SP", "d": "Basel-Stadt", "credit": "© ParlCH / Alessandro della Valle" },
+        { "slug": "sr-salzmann", "n": "Werner Salzmann", "p": "SVP", "d": "Bern", "credit": "© ParlCH / Alessandro della Valle" },
+        { "slug": "sr-wasserfallen", "n": "Flavia Wasserfallen", "p": "SP", "d": "Bern", "credit": "© ParlCH / Alessandro della Valle" },
+        { "slug": "sr-chassot", "n": "Isabelle Chassot", "p": "Mitte", "d": "Freiburg", "credit": "© ParlCH" },
+        { "slug": "sr-gapany", "n": "Johanna Gapany", "p": "FDP", "d": "Freiburg", "credit": "© ParlCH / Alessandro della Valle" },
+        { "slug": "sr-poggia", "n": "Mauro Poggia", "p": "MCG", "d": "Genf", "credit": "© ParlCH" },
+        { "slug": "sr-sommaruga", "n": "Carlo Sommaruga", "p": "SP", "d": "Genf", "credit": "© ParlCH / Alessandro della Valle" },
+        { "slug": "sr-muehlemann", "n": "Benjamin Mühlemann", "p": "FDP", "d": "Glarus", "credit": "© ParlCH / Alessandro della Valle" },
+        { "slug": "sr-zopfi", "n": "Mathias Zopfi", "p": "Grüne", "d": "Glarus", "credit": "© ParlCH / Alessandro della Valle" },
+        { "slug": "sr-engler", "n": "Stefan Engler", "p": "Mitte", "d": "Graubünden", "credit": "© ParlCH" },
+        { "slug": "sr-schmid", "n": "Martin Schmid", "p": "FDP", "d": "Graubünden", "credit": "© ParlCH / Alessandro della Valle" },
+        { "slug": "sr-crevoisier-crelier", "n": "Mathilde Crevoisier Crelier", "p": "SP", "d": "Jura", "credit": "© ParlCH / Alessandro della Valle" },
+        { "slug": "sr-juillard", "n": "Charles Juillard", "p": "Mitte", "d": "Jura", "credit": "© ParlCH" },
+        { "slug": "sr-gmuer-schoenenberger", "n": "Andrea Gmür-Schönenberger", "p": "Mitte", "d": "Luzern", "credit": "© ParlCH / Alessandro della Valle" },
+        { "slug": "sr-mueller", "n": "Damian Müller", "p": "FDP", "d": "Luzern", "credit": "© ParlCH" },
+        { "slug": "sr-fivaz", "n": "Fabien Fivaz", "p": "Grüne", "d": "Neuenburg", "credit": "© ParlCH / Alessandro della Valle" },
+        { "slug": "sr-hurni", "n": "Baptiste Hurni", "p": "SP", "d": "Neuenburg", "credit": "© ParlCH / Alessandro della Valle" },
+        { "slug": "sr-wicki", "n": "Hans Wicki", "p": "FDP", "d": "Nidwalden", "credit": "© ParlCH / Alessandro della Valle" },
+        { "slug": "sr-ettlin", "n": "Erich Ettlin", "p": "Mitte", "d": "Obwalden", "credit": "© ParlCH / Alessandro della Valle" },
+        { "slug": "sr-bruengger", "n": "Severin Brüngger", "p": "FDP", "d": "Schaffhausen", "credit": "© ParlCH" },
+        { "slug": "sr-germann", "n": "Hannes Germann", "p": "SVP", "d": "Schaffhausen", "credit": "© ParlCH / Alessandro della Valle" },
+        { "slug": "sr-goessi", "n": "Petra Gössi", "p": "FDP", "d": "Schwyz", "credit": "© ParlCH / Silvan Bucher" },
+        { "slug": "sr-schwander", "n": "Pirmin Schwander", "p": "SVP", "d": "Schwyz", "credit": "© ParlCH" },
+        { "slug": "sr-bischof", "n": "Pirmin Bischof", "p": "Mitte", "d": "Solothurn", "credit": "© ParlCH / Alessandro della Valle" },
+        { "slug": "sr-roth", "n": "Franziska Roth", "p": "SP", "d": "Solothurn", "credit": "© ParlCH" },
+        { "slug": "sr-friedli", "n": "Esther Friedli", "p": "SVP", "d": "St. Gallen", "credit": "© ParlCH / Alessandro della Valle" },
+        { "slug": "sr-wuerth", "n": "Benedikt Würth", "p": "Mitte", "d": "St. Gallen", "credit": "© ParlCH / Alessandro della Valle" },
+        { "slug": "sr-chiesa", "n": "Marco Chiesa", "p": "SVP", "d": "Tessin", "credit": "© ParlCH / FotoPucci sagl" },
+        { "slug": "sr-regazzi", "n": "Fabio Regazzi", "p": "Mitte", "d": "Tessin", "credit": "© ParlCH / Alessandro della Valle" },
+        { "slug": "sr-haeberli-koller", "n": "Brigitte Häberli-Koller", "p": "Mitte", "d": "Thurgau", "credit": "© ParlCH" },
+        { "slug": "sr-stark", "n": "Jakob Stark", "p": "SVP", "d": "Thurgau", "credit": "© ParlCH / Alessandro della Valle" },
+        { "slug": "sr-dittli", "n": "Josef Dittli", "p": "FDP", "d": "Uri", "credit": "© ParlCH" },
+        { "slug": "sr-z-graggen", "n": "Heidi Z'graggen", "p": "Mitte", "d": "Uri", "credit": "© ParlCH" },
+        { "slug": "sr-broulis", "n": "Pascal Broulis", "p": "FDP", "d": "Waadt", "credit": "© ParlCH" },
+        { "slug": "sr-maillard", "n": "Pierre-Yves Maillard", "p": "SP", "d": "Waadt", "credit": "© ParlCH / Alessandro della Valle" },
+        { "slug": "sr-maret", "n": "Marianne Maret", "p": "Mitte", "d": "Wallis", "credit": "© ParlCH / Alessandro della Valle" },
+        { "slug": "sr-rieder", "n": "Beat Rieder", "p": "Mitte", "d": "Wallis", "credit": "© ParlCH / Alessandro della Valle" },
+        { "slug": "sr-hegglin", "n": "Peter Hegglin", "p": "Mitte", "d": "Zug", "credit": "© ParlCH / Alessandro della Valle" },
+        { "slug": "sr-michel", "n": "Matthias Michel", "p": "FDP", "d": "Zug", "credit": "© ParlCH / Alessandro della Valle" },
+        { "slug": "sr-jositsch", "n": "Daniel Jositsch", "p": "parteilos", "d": "Zürich", "credit": "© ParlCH / stahl photographie gmbh" },
+        { "slug": "sr-moser", "n": "Tiana Angelina Moser", "p": "GLP", "d": "Zürich", "credit": "© ParlCH / Alessandro della Valle" }
+      ]
+    }
+  }
+}

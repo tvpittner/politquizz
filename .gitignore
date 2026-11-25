@@ -1,0 +1,5 @@
+img/raw/
+node_modules/
+.playwright-mcp/
+.impeccable/
+QUIZ-MIT-BILDERN.md
